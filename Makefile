@@ -1,7 +1,7 @@
 CC=gcc
 FLAGS=-Wall -g
 
-all: my_mat.a isort txtfind
+all:isort txtfind mainsort.a maintxt.a
 
 
 mainsort.a:mainsort.o
@@ -13,14 +13,10 @@ isort:mainsort.o
 txtfind:maintxt.o
 	$(CC) $(FLAGS) -fPIC -o txtfind maintxt.o:
 
-
-
--fPIC
-
-maintxt.o: main.c /////my_mat.h
-	$(CC) $(FLAGS) -c maintxt.c
-mainsort.o: main.c ///////// my_mat.h
-	$(CC) $(FLAGS) -c mainsory.c
+maintxt.o: maintxt.c
+	$(CC) $(FLAGS) -c maintxt.c maintxt.c
+mainsort.o: mainsort.c
+	$(CC) $(FLAGS) -c mainsory.c mainsort
 
 .PHONY:clean all
 clean:
