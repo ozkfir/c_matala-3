@@ -11,12 +11,12 @@ maintxt.a:maintxt.o
 isort:mainsort.o
 	$(CC) $(FLAGS) -fPIC -o isort mainsort.o
 txtfind:maintxt.o
-	$(CC) $(FLAGS) -fPIC -o txtfind maintxt.o:
+	$(CC) $(FLAGS) -fPIC -o txtfind maintxt.o
 
 maintxt.o: maintxt.c
-	$(CC) $(FLAGS) -c maintxt.c maintxt.c
+	$(CC) $(FLAGS) -c maintxt.o maintxt.c
 mainsort.o: mainsort.c
-	$(CC) $(FLAGS) -c mainsory.c mainsort
+	$(CC) $(FLAGS) -c mainsort.o mainsort.c
 
 .PHONY:clean all
 clean:
